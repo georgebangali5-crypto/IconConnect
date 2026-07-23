@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Book a Celebrity - IconConnect</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <div class="logo">
+            IconConnect
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="browse.html">
+                Browse Celebrities
+            </a>
+
+            <a href="how-it-works.html">
+                How It Works
+            </a>
+
+            <a href="booking.html" class="active">
+                Booking
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+            
+            <a href="booking-status.html">
+                Check Booking Status
+            </a>
+
+            <a href="admin.html">
+                Admin
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================================
+         BOOKING PAGE
+    ================================= -->
+
+    <main class="booking-page">
+
+
+        <section class="booking-hero">
+
+            <h1>
+                Book a Celebrity
+            </h1>
+
+            <p>
+                Choose your celebrity and submit your booking request.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================================
+             CELEBRITY LIST
+        ================================= -->
+
+        <section class="celebrity-section">
+
+            <h2>
+                Available Celebrities
+            </h2>
+
+
+            <div
+                id="celebrityContainer"
+                class="celebrity-grid">
+
+                <!-- Celebrities will appear here -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             BOOKING FORM
+        ================================= -->
+
+        <section class="booking-section">
+
+            <h2>
+                Submit a Booking Request
+            </h2>
+
+
+            <form id="bookingForm">
+
+
+                <!-- FULL NAME -->
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- CELEBRITY -->
+
+                <div class="form-group">
+
+                    <label for="selectedCelebrity">
+                        Celebrity Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="selectedCelebrity"
+                        placeholder="Click Book Now above"
+                        readonly
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- EVENT TYPE -->
+
+                <div class="form-group">
+
+                    <label for="eventType">
+                        Event Type
+                    </label>
+
+                    <select
+                        id="eventType"
+                        required
+                    >
+
+                        <option value="">
+                            Select Event Type
+                        </option>
+
+                        <option value="Wedding">
+                            Wedding
+                        </option>
+
+                        <option value="Concert">
+                            Concert
+                        </option>
+
+                        <option value="Birthday">
+                            Birthday
+                        </option>
+
+                        <option value="Corporate Event">
+                            Corporate Event
+                        </option>
+
+                        <option value="Brand Promotion">
+                            Brand Promotion
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- EVENT DATE -->
+
+                <div class="form-group">
+
+                    <label for="eventDate">
+                        Event Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="eventDate"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="booking-btn"
+                >
+                    Submit Booking Request
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>

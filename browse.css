@@ -1,0 +1,794 @@
+/* =====================================================
+   ICONCONNECT - BROWSE CELEBRITIES
+   PART 1 - PAGE LAYOUT & HEADER
+===================================================== */
+
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #111827;
+
+    min-height: 100vh;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    width: 100%;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 18px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    padding: 9px 12px;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    background: rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+}
+
+
+nav a.active {
+    background: #2563eb;
+
+    color: white;
+}
+
+
+/* ================================
+   MAIN
+================================ */
+
+.browse-page {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 45px 25px;
+}
+
+
+/* ================================
+   PAGE HERO
+================================ */
+
+.browse-hero {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.browse-hero h1 {
+    font-size: 36px;
+
+    margin-bottom: 12px;
+
+    color: #111827;
+}
+
+
+.browse-hero p {
+    font-size: 16px;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   CELEBRITY SECTION
+================================ */
+
+.celebrity-section {
+    width: 100%;
+}
+
+
+.celebrity-section h2 {
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+    color: #111827;
+}
+
+
+/* ================================
+   CELEBRITY GRID
+================================ */
+
+.celebrity-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}/* =====================================================
+   PART 2 - CELEBRITY CARDS
+===================================================== */
+
+
+/* ================================
+   CELEBRITY CARD
+================================ */
+
+.celebrity-card {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.celebrity-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+}
+
+
+/* ================================
+   CELEBRITY IMAGE
+================================ */
+
+.celebrity-card img {
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ================================
+   CARD CONTENT
+================================ */
+
+.celebrity-card-content {
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+.celebrity-card h3 {
+    font-size: 21px;
+
+    color: #111827;
+
+    margin-bottom: 8px;
+}
+
+
+.celebrity-card .category {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.celebrity-card .description {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+
+    flex: 1;
+}
+
+
+/* ================================
+   PRICE
+================================ */
+
+.celebrity-card .price {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #111827;
+
+    margin-bottom: 18px;
+}/* =====================================================
+   PART 3 - BOOK NOW BUTTON & CARD DETAILS
+===================================================== */
+
+
+/* ================================
+   BOOK NOW BUTTON
+================================ */
+
+.celebrity-card .book-btn,
+.celebrity-card button {
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.celebrity-card .book-btn:hover,
+.celebrity-card button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   CARD BUTTON CONTAINER
+================================ */
+
+.celebrity-card .card-actions {
+    margin-top: auto;
+
+    padding-top: 5px;
+}
+
+
+/* ================================
+   NO CELEBRITIES MESSAGE
+================================ */
+
+#celebrityContainer .no-celebrities {
+
+    width: 100%;
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    background: white;
+
+    padding: 45px 20px;
+
+    border-radius: 12px;
+
+    color: #6b7280;
+
+    box-shadow:
+        0 5px 20px rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+}
+
+
+/* ================================
+   LOADING MESSAGE
+================================ */
+
+#celebrityContainer .loading {
+
+    width: 100%;
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #6b7280;
+
+    font-size: 16px;
+}/* =====================================================
+   PART 4 - MOBILE & TABLET RESPONSIVE DESIGN
+===================================================== */
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 18px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    nav {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    .browse-page {
+        padding: 35px 20px;
+    }
+
+
+    .celebrity-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
+        padding: 18px 15px;
+
+        gap: 15px;
+    }
+
+
+    .logo {
+        font-size: 22px;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+    }
+
+
+    nav a {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 10px;
+    }
+
+
+    /* MAIN PAGE */
+
+    .browse-page {
+        padding: 30px 12px;
+    }
+
+
+    /* HERO */
+
+    .browse-hero {
+        margin-bottom: 35px;
+    }
+
+
+    .browse-hero h1 {
+        font-size: 28px;
+    }
+
+
+    .browse-hero p {
+        font-size: 14px;
+    }
+
+
+    /* SECTION TITLE */
+
+    .celebrity-section h2 {
+        font-size: 22px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* CELEBRITY GRID */
+
+    .celebrity-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    /* CELEBRITY IMAGE */
+
+    .celebrity-card img {
+        height: 250px;
+    }
+
+
+    /* CARD CONTENT */
+
+    .celebrity-card-content {
+        padding: 20px;
+    }
+
+
+    .celebrity-card h3 {
+        font-size: 20px;
+    }
+
+}/* =====================================================
+   PART 5 - BROWSE SEARCH & FILTER
+===================================================== */
+
+.browse-controls {
+    width: 100%;
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+
+.browse-controls input,
+.browse-controls select {
+    padding: 14px 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #111827;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.browse-controls input {
+    flex: 1;
+}
+
+
+.browse-controls select {
+    min-width: 180px;
+
+    cursor: pointer;
+}
+
+
+.browse-controls input:focus,
+.browse-controls select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+
+/* ================================
+   SEARCH MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .browse-controls {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .browse-controls input,
+    .browse-controls select {
+        width: 100%;
+    }
+
+}/* =====================================================
+   PART 6 - MATCH BROWSE.JS CELEBRITY CARDS
+===================================================== */
+
+.browse-celebrity-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+
+.browse-celebrity-card {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: 0.3s;
+}
+
+
+.browse-celebrity-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+.browse-celebrity-card img {
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.celebrity-info {
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+.celebrity-info h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+
+    color: #111827;
+}
+
+
+.celebrity-category {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.celebrity-description {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+
+.celebrity-price {
+    color: #111827;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+
+.browse-book-btn {
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.browse-book-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+
+    .browse-celebrity-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .browse-celebrity-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .browse-celebrity-card img {
+        height: 250px;
+    }
+
+}

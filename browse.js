@@ -249,4 +249,16 @@ if (categoryFilter) {
 
 displayCelebrities(
     celebrities
-);
+);// ===============================
+// LOAD SELECTED CELEBRITY
+// ===============================
+
+const selectedCelebrity = localStorage.getItem("selectedCelebrity");
+
+if (selectedCelebrity) {
+    const celebrityInput = document.getElementById("selectedCelebrity");
+
+    if (celebrityInput) {
+        celebrityInput.value = selectedCelebrity;
+    }
+}

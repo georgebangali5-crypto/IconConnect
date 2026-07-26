@@ -1,192 +1,71 @@
-/* =====================================================
+/* =========================================
    ICONCONNECT - BOOKING STATUS
-===================================================== */
+========================================= */
 
-const statusForm =
-    document.getElementById("statusForm");
+document.addEventListener("DOMContentLoaded", function () {
 
-const statusResults =
-    document.getElementById("statusResults");
+    const statusForm = document.getElementById("statusForm");
+    const statusResults = document.getElementById("statusResults");
 
+    if (!statusForm || !statusResults) return;
 
-/* =====================================================
-   CHECK BOOKING STATUS
-===================================================== */
+    statusForm.addEventListener("submit", function (e) {
 
-statusForm.addEventListener(
-    "submit",
-    function (event) {
+        e.preventDefault();
 
-        event.preventDefault();
+        const email = document
+            .getElementById("statusEmail")
+            .value
+            .trim()
+            .toLowerCase();
 
+        const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-        // Get customer email
-        const email =
-            document
-                .getElementById("statusEmail")
-                .value
-                .trim()
-                .toLowerCase();
+        const userBookings = bookings.filter(function (booking) {
+            return booking.email &&
+                booking.email.toLowerCase() === email;
+        });
 
-
-        // Get saved bookings
-        const bookings =
-            JSON.parse(
-                localStorage.getItem("bookings")
-            ) || [];
-
-
-        // Find bookings using email
-        const customerBookings =
-            bookings.filter(
-                function (booking) {
-
-                    return (
-                        booking.email &&
-                        booking.email
-                            .trim()
-                            .toLowerCase() === email
-                    );
-
-                }
-            );
-
-
-        // Clear previous results
         statusResults.innerHTML = "";
 
-
-        // No booking found
-        if (
-            customerBookings.length === 0
-        ) {
+        if (userBookings.length === 0) {
 
             statusResults.innerHTML = `
-
-                <div class="no-booking">
-
-                    <h2>
-                        No Booking Found
-                    </h2>
-
-                    <p>
-                        We could not find any booking
-                        associated with this email address.
-                    </p>
-
+                <div class="card">
+                    <h2>No Booking Found</h2>
+                    <p>No booking exists for this email address.</p>
                 </div>
-
             `;
 
             return;
         }
 
+        userBookings.forEach(function (booking) {
 
-        // Display each booking
-        customerBookings.forEach(
-            function (booking) {
+            statusResults.innerHTML += `
+                <div class="card">
+                    <h2>${booking.celebrity}</h2>
 
+                    <p><strong>Name:</strong> ${booking.name}</p>
 
-                // Get booking status
-                const status =
-                    booking.status || "Pending";
+                    <p><strong>Email:</strong> ${booking.email}</p>
 
+                    <p><strong>Event:</strong> ${booking.event}</p>
 
-                // Create status class
-                const statusClass =
-                    status.toLowerCase();
+                    <p><strong>Date:</strong> ${booking.date}</p>
 
+                    <p><strong>Location:</strong> ${booking.location}</p>
 
-                statusResults.innerHTML += `
+                    <p>
+                        <strong>Status:</strong>
+                        <span class="status ${booking.status || "Pending"}">
+                            ${booking.status || "Pending"}
+                        </span>
+                    </p>
+                </div>
+            `;
+        });
 
-                    <div class="booking-result">
+    });
 
-                        <h2>
-                            Booking Details
-                        </h2>
-
-
-                        <div class="booking-info">
-
-
-                            <div>
-
-                                <strong>
-                                    Customer
-                                </strong>
-
-                                <span>
-                                    ${booking.name || "N/A"}
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <strong>
-                                    Celebrity
-                                </strong>
-
-                                <span>
-                                    ${booking.celebrity || "N/A"}
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <strong>
-                                    Event
-                                </strong>
-
-                                <span>
-                                    ${booking.event || "N/A"}
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <strong>
-                                    Event Date
-                                </strong>
-
-                                <span>
-                                    ${booking.date || "N/A"}
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <strong>
-                                    Booking Status
-                                </strong>
-
-                                <span
-                                    class="
-                                        status-badge
-                                        status-${statusClass}
-                                    "
-                                >
-                                    ${status}
-                                </span>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                `;
-
-            }
-        );
-
-    }
-);
+});

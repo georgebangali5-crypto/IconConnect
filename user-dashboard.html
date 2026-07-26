@@ -1,0 +1,40 @@
+<script>
+const user = JSON.parse(localStorage.getItem("iconconnectUser"));
+const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+const bookingList = document.getElementById("bookingList");
+
+if (!user) {
+
+    bookingList.innerHTML = "<p>Please log in first.</p>";
+
+} else {
+
+    const myBookings = bookings.filter(function(booking){
+        return booking.email === user.email;
+    });
+
+    if (myBookings.length === 0) {
+
+        bookingList.innerHTML = "<h2>No bookings found.</h2>";
+
+    } else {
+
+        myBookings.forEach(function(booking){
+
+            bookingList.innerHTML += 
+                <div class="card">
+                    <h2>${booking.celebrity}</h2>
+                    <p><strong>Name:</strong> ${booking.name}</p>
+                    <p><strong>Event:</strong> ${booking.event}</p>
+                    <p><strong>Date:</strong> ${booking.date}</p>
+                    <p><strong>Status:</strong> ${booking.status}</p>
+                </div>
+            ;
+
+        });
+
+    }
+
+}
+</script>

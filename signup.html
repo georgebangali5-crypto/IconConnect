@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - IconConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">IconConnect</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="browse.html">Browse</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="booking.html">Booking</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<section class="login-section">
+    <div class="login-box">
+        <h2>Create an Account</h2>
+        <p>Join IconConnect today</p>
+
+        <form id="signupForm">
+            <input type="text" id="fullname" placeholder="Full Name" required>
+
+            <input type="email" id="signupEmail" placeholder="Email Address" required>
+
+            <input type="password" id="signupPassword" placeholder="Password" required>
+
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <div class="login-links">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const user = {
+        fullname: document.getElementById("fullname").value,
+        email: document.getElementById("signupEmail").value,
+        password: document.getElementById("signupPassword").value
+    };
+
+    localStorage.setItem("iconconnectUser", JSON.stringify(user));
+
+    alert("Account created successfully!");
+
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

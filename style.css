@@ -202,11 +202,14 @@ nav a:hover{
     gap:20px;
 }
 
-.step{
+.card{
     width:250px;
     background:#f8f8f8;
     padding:20px;
     border-radius:10px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
 }
 
 /* =========================
@@ -1673,4 +1676,169 @@ footer {
         padding: 20px 15px 50px;
     }
 
+}.card{
+    background:#fff;
+    padding:20px;
+    margin:20px 0;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.card h3{
+    color:#111827;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.6;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    background:#111827;
+    color:white;
+}/* HOW IT WORKS PAGE */
+
+header {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.panel {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.panel h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px;
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    color: #111827;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        display: block;
+        width: 90%;
+        margin: 20px auto;
+    }
+}/* How It Works */
+.panel{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.card{
+    width:250px;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    transition:.3s;
+}.page-header{
+    background:#111827;
+    color:#fff;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.panel{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.panel h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.step-number{
+    width:60px;
+    height:60px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#111827;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+footer{
+    background:#111827;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
 }
